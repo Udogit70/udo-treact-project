@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Treact Project</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -19,7 +19,7 @@
                 <div class="nav__logo">
                 <!-- Nav Logo her-->
                     <a href="#landing">
-                       <img src="./assets/logo.svg" alt="TReact Logo">
+                     <img src="./assets/logo.svg" alt="TReact Logo" class="logo__img" style="width: 40px; height: auto;">  
                        <span>TReact</span>
                     </a>
                   </div>
@@ -62,18 +62,57 @@
                 <a class="modal__link modal__link--primary">Sign Up</a>
             </div>
         </div>
-        <header>
-            <div class="container">
-                <div class="row">
-                    <!--  -->Enter Header / About Us Section<!--  -->
+        
+<!--The Header / About Us Section-->
+<header>
+    <div class="container">
+        <div class="row">
+ <!-- Left Column: Text & Form (40% Width) -->
+            <div class="header__content-left">
+                
+                <!-- 1. The Main Heading -->
+                <h1 class="title">
+                    Beautiful React Templates <span class="purple">for you.</span>
+                </h1>
+                
+                <!-- 2. The Descriptive Paragraph -->
+                <p class="para">
+                    Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.
+                </p>
+                
+                <!-- 3. The Rounded Email Form -->
+                <form class="input__container">
+                    <input type="email" placeholder="Your E-mail Address" class="input" required>
+                    <button type="submit" class="purple__btn">Get Started</button>
+                </form>
+                
+                <!-- 4. The Trusted Customers Logos -->
+                <div class="trusted__container">
+                    <p class="trusted__title">OUR TRUSTED CUSTOMERS</p>
+                    <div class="trusted__logos">
+                        <img src="./assets/fortune.svg" alt="Fortune" class="trusted__img">
+                        <img src="./assets/weather.svg" alt="The Weather Channel" class="trusted__img">
+                        <img src="./assets/fast-company.svg" alt="Fast Company" class="trusted__img">
+                        <img src="./assets/nat-geo.svg" alt="National Geographic" class="trusted__img">
+                    </div>
+                </div>
+
             </div>
-        </header>
-    </section>
+
+            <!-- Right Column: Big Hero Graphics (60% Width) -->
+            <div class="header__content-right">
+                <img src="./assets/hero-image.svg" alt="Treact Hero Illustration" class="hero__img">
+            </div>                
+           </div>
+          </div>
+         </header>
+        </section>
+    
     <main>
         <section id="features">
             <div class="container">
                 <div class="row__narrow">
-                    <!--  -->Enter Features Section<!--  -->
+     <!--Enter Features Section-->
                 </div>
             </div>
         </section>

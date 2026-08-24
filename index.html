@@ -5,25 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treact Project</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cloudflare.com" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">  
+    <link rel="stylesheet" href="style.css">      
     <script src="script.js"></script>
 </head>
 
 <body>
     <section id="landing">
-        <nav>
-            <div class="row nav__row">
-                <div class="nav__logo">
-                <!-- Nav Logo her-->
-                    <a href="#landing">
-                     <img src="./assets/logo.svg" alt="TReact Logo" class="logo__img" style="width: 40px; height: auto;">  
-                       <span>TReact</span>
-                    </a>
-                  </div>
-                 </div>
-            <!--  --Enter Nav Links here-->
+         <nav>     
             <div class="nav__links">
                 <a href="#about" class="nav__link">About</a>
                 <a href="#blog" class="nav__link">Blog</a>
@@ -31,50 +20,49 @@
                 <a href="#contact" class="nav__link">Contact Us</a>
                 <a href="#login" class="nav__link">Login</a>
                 <a href="#signup" class="nav__link modal__link--primary">Sign Up</a>
-            </div>                   
+            </div>  
+            
             <button class="btn__menu" onclick="openMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="btn__menu--svg">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-              </svg>
-            </button>
-            </div>
-          </nav>
-           <div class="modal">
-               <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="btn__menu--svg">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+          
+             <button class="btn__menu btn__menu--close" onclick="closeMenu()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     class="light___StyledCloseIcon-lj69nl-14 fASujC">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
-            </button>
-            <div class="modal__links">
-                <a class="modal__link">About</a>
-                <a class="modal__link">Blog</a>
-                <a class="modal__link">Pricing</a>
-                <a class="modal__link">Contact Us</a>
-                <a class="modal__link">Login</a>
-                <a class="modal__link modal__link--primary">Sign Up</a>
-            </div>
-        </div>
-        
+             </button>
+            
+             <div class="modal">
+                <div class="modal__links">
+                    <a class="modal__link">About</a>
+                    <a class="modal__link">Blog</a>
+                    <a class="modal__link">Pricing</a>
+                    <a class="modal__link">Contact Us</a>
+                    <a class="modal__link">Login</a>
+                    <a class="modal__link modal__link--primary">Sign Up</a>
+                </div>
+              </div>
+          </nav>
 <!--The Header / About Us Section-->
-<header>
+ <header>
     <div class="container">
         <div class="row">
  <!-- Left Column: Text & Form (40% Width) -->
             <div class="header__content-left">
-                
-                <!-- 1. The Main Heading -->
+         <!-- 1. The Main Heading -->
                 <h1 class="title">
                     Beautiful React Templates <span class="purple">for you.</span>
                 </h1>
-                
-                <!-- 2. The Descriptive Paragraph -->
+           <!-- 2. The Descriptive Paragraph -->
                 <p class="para">
                     Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.
                 </p>
@@ -84,56 +72,54 @@
                     <input type="email" placeholder="Your E-mail Address" class="input" required>
                     <button type="submit" class="purple__btn">Get Started</button>
                 </form>
-                
-                <!-- 4. The Trusted Customers Logos -->
-                <div class="trusted__container">
-                    <p class="trusted__title">OUR TRUSTED CUSTOMERS</p>
-                    <div class="trusted__logos">
-                        <img src="./assets/fortune.svg" alt="Fortune" class="trusted__img">
-                        <img src="./assets/weather.svg" alt="The Weather Channel" class="trusted__img">
-                        <img src="./assets/fast-company.svg" alt="Fast Company" class="trusted__img">
-                        <img src="./assets/nat-geo.svg" alt="National Geographic" class="trusted__img">
-                    </div>
-                </div>
-
+            </div>    
+          </div>    
+        </div>           
+        
+        <!-- 4. The Trusted Customers Logos --> 
+          <div class="trusted__container">
+                <p class="trusted__title">OUR TRUSTED CUSTOMERS</p>   
+             <div class="trusted__logos">
+                <img src="./assets/fortune.svg" alt="Fortune" class="trusted__img">
+                <img src="./assets/weather.svg" alt="The Weather Channel" class="trusted__img">
+                <img src="./assets/fast-company.svg" alt="Fast Company" class="trusted__img">
+                <img src="./assets/nat-geo.svg" alt="National Geographic" class="trusted__img">
             </div>
-
+        </div>
             <!-- Right Column: Big Hero Graphics (60% Width) -->
             <div class="header__content-right">
                 <img src="./assets/hero-image.svg" alt="Treact Hero Illustration" class="hero__img">
             </div>                
-           </div>
-          </div>
-         </header>
+          </header>
         </section>
     
     <main>
      <!--Enter Features Section-->   
-        
         <section id="features">
             <div class="container">
                 <div class="row__narrow">
-     
-       <!-- 1. Features Header (Title & Subtitle) -->
-            <div class="features__header">
-                <h2 class="features__title">We have Amazing<span class="purple"> Service.</span>
-                </h2>
-                <p class="features__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-
+         <!-- 1. Features Header (Title & Subtitle) -->
+                    <div class="features__header">
+                        <h2 class="features__title">We have Amazing<span class="purple"> Service.</span>
+                        </h2>
+                        <p class="features__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
             <!-- 2. The 6-Item Features Grid Wrapper -->
-            <div class="features__grid">
-
-                <!-- Card 1: Secure -->
-                <div class="feature__card">
-                    <div class="feature__icon-container">
-                        <img src="./assets/shield.svg" alt="Secure Icon" class="feature__icon">
+                    <div class="features__grid">
+            <!-- Card 1: Secure -->
+                        <div class="feature__card">
+                           <div class="feature__icon-container">
+                              <img src="./assets/shield.svg" alt="Secure Icon" class="feature__icon">
+                            </div>
+                        </div>
                     </div>
-                    <div class="feature__text">
-                        <h3 class="feature__title">Secure</h3>
-                        <p class="feature__para">We strictly only deal with vendors that provide top notch security.</p>
+                    
+                           <div class="feature__text">
+                                <h3 class="feature__title">Secure</h3>
+                                <p class="feature__para">We strictly only deal with vendors that provide top notch security.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
           
     <!-- Card 2: 24/7 Support -->
                 <div class="feature__card">
@@ -214,7 +200,7 @@
                 <img src="./assets/quality-image.svg" alt="Quality Work Illustration" class="quality__img">
             </div>
            </div>
-            </div>
+         </div>
         </section>
         
         <!-- Steps Section -->
@@ -383,7 +369,7 @@
                         <span class="plan__duration">MONTHLY</span>
                 </div>
                     <div class="pricing__card-body">
-                        <p class="feature__heading">For Large Companies</p>
+                         <p class="feature__heading">For Large Companies</p>
                         <ul class="feature__list">
                             <li>90 Templates</li>
                             <li>27 Landing Pages</li>
@@ -395,32 +381,30 @@
                         <button class="pricing__btn pricing__btn--pink">BUY NOW</button>
                     </div>
                 </div>
-
             </div>
            </div>
           </section>
-        
         
     <!-- Testimonials Section --> 
         <section id="testimonials">
             <div class="container">
                 <div class="row">
     <!--Testimonials Centered Header Container-->
-   <div class="testimonials__header">
-                <span class="purple-badge">TESTIMONIALS</span>
-                <h2 class="section__title">Our Clients <span class="purple">Love Us.</span></h2>
-                <p class="section__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-
-        <!-- 2. Testimonials Sub-Split Layout (Image left, Cards right) -->
-            <div class="testimonials__content">  
-                <!-- Left Column: Customer Review Illustration Graphic -->
-                <div class="testimonials__content-left">
-                    <img src="./assets/testimonials-image.svg" alt="Happy Clients Illustration" class="testimonials__img">
+                <div class="testimonials__header">
+                    <span class="purple-badge">TESTIMONIALS</span>
+                    <h2 class="section__title">Our Clients <span class="purple">Love Us.</span></h2>
+                    <p class="section__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
 
+        <!-- 2. Testimonials Sub-Split Layout (Image left, Cards right) -->
+                 <div class="testimonials__content">  
+                <!-- Left Column: Customer Review Illustration Graphic -->
+                   <div class="testimonials__content-left">
+                      <img src="./assets/testimonials-image.svg" alt="Happy Clients Illustration" class="testimonials__img">
+                   </div>
+
                 <!-- Right Column: Active Review Card Slider -->
-                <div class="testimonials__content-right">
+                   <div class="testimonials__content-right">
                     
                     <!-- Stars Rating Indicator Row -->
                     <div class="stars__rating">
@@ -431,15 +415,15 @@
                         <img src="./assets/star-icon.svg" alt="Star" class="star__icon">
                     </div>
 
-                    <h3 class="review__heading">Amazing User Experience</h3>
+                        <h3 class="review__heading">Amazing User Experience</h3>
                     
-                    <p class="review__quote">
+                        <p class="review__quote">
                         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    </p>
+                        </p>
 
                     <!-- Reviewer Profile Detail Box -->
                     <div class="reviewer__profile">
-                        <img src="./assets/customer-avatar.jpg" alt="Charlotte Hale Profile" class="reviewer__avatar">
+                         <img src="./assets/customer-avatar.jpg" alt="Charlotte Hale Profile" class="reviewer__avatar">
                         <div class="reviewer__info">
                             <h4 class="reviewer__name">Charlotte Hale</h4>
                             <p class="reviewer__title">Director, Delos Inc.</p>
@@ -455,117 +439,116 @@
               <div class="row">
                     
 <!-- Create the Floating CTA Card Component Wrapper here -->
-            <div class="cta__card">           
+                <div class="cta__card">           
     <!-- Left-aligned content text -->
-             <h2 class="cta__heading">
-                    Developers all over the world are happily using Treact.
-             </h2>    
+                    <h2 class="cta__heading">
+                        Developers all over the world are happily using Treact.
+                    </h2>    
      <!-- Right-aligned horizontal action buttons -->
-        <div class="cta__buttons">
-            <a href="#signup" class="cta__btn cta__btn--primary">Get Started</a>
-            <a href="#contact" class="cta__btn cta__btn--secondary">Contact Us</a>
-        </div>
-      </div>>
-    </div>
-  </section>
-</main>
-    
+                <div class="cta__buttons">
+                    <a href="#signup" class="cta__btn cta__btn--primary">Get Started</a>
+                    <a href="#contact" class="cta__btn cta__btn--secondary">Contact Us</a>
+                </div>
+              </div>
+            </div>
+           </section>
+          </main>
+            
  <!-- Footer Section --> 
-<footer>
-        <div class="container footer__container">
-            <div class="row footer__row">
-                
-                <!-- 5-Column Navigation Grid -->
-                <div class="footer__links-grid">
-                    <!-- Column 1: Main -->
-                    <div class="footer__col">
-                        <h5 class="footer__col-title">MAIN</h5>
-                        <ul class="footer__list">
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#faqs">FAQs</a></li>
-                            <li><a href="#support">Support</a></li>
-                            <li><a href="#about">About Us</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 2: Product -->
-                    <div class="footer__col">
-                        <h5 class="footer__col-title">PRODUCT</h5>
-                        <ul class="footer__list">
-        <li><a href="#login">Log In</a></li>
-                            <li><a href="#personal">Personal</a></li>
-                            <li><a href="#business">Business</a></li>
-                            <li><a href="#team">Team</a></li>
-                        </ul>
-                    </div>
+       <section id="footer" class="footer-section">  
+         <footer class="container">
+            <div class="row">     
+              <div class="footer__top">
+                <h2 class="footer__title">Get Started with Treact Today.</h2>
+                <p class="footer__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#signup" class="footer__btn">Sign Up</a>
+              </div>
+            </div>
+      
+           <!-- 5-Column Navigation Grid -->
+                  <div class="footer__links-container">
+                     <div class="footer__links-grid">
+                     </div>
+                  </div>
+        
+         <!-- Column 1: Main -->
+                        <div class="row"> 
+                           <div class="footer__col">
+                               <h5 class="footer__col-title">MAIN</h5>
+                             <ul class="footer-links-list">
+                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#faqs">FAQs</a></li>
+                                <li><a href="#support">Support</a></li>
+                                <li><a href="#about">About Us</a></li>
+                             </ul>
+                           </div>
+                        </div>  
+         <!-- Column 2: Product -->
+                         <div class="row"> 
+                             <div class="footer__col">
+                                  <h5 class="footer__col-title">PRODUCT</h5>
+                                <ul class="footer-links-list">
+                                    <li><a href="#login">Log In</a></li>
+                                    <li><a href="#personal">Personal</a></li>
+                                    <li><a href="#business">Business</a></li>
+                                    <li><a href="#team">Team</a></li>
+                                </ul>
+                              </div>
+                          </div>
 
                     <!-- Column 3: Press -->
-                    <div class="footer__col">
-                        <h5 class="footer__col-title">PRESS</h5>
-                        <ul class="footer__list">
-                            <li><a href="#logos">Logos</a></li>
-                            <li><a href="#events">Events</a></li>
-                            <li><a href="#stories">Stories</a></li>
-                            <li><a href="#office">Office</a></li>
-                        </ul>
-                    </div>
+                     <div class="row"> 
+                        <div class="footer__col">
+                           <h5 class="footer__col-title">PRESS</h5>
+                          <ul class="footerlist">
+                              <li><a href="#logos">Logos</a></li>
+                              <li><a href="#events">Events</a></li>
+                              <li><a href="#stories">Stories</a></li>
+                              <li><a href="#office">Office</a></li>
+                          </ul>
+                        </div>
+                     </div>
+                    
 
                     <!-- Column 4: Team -->
-                    <div class="footer__col">
-                        <h5 class="footer__col-title">TEAM</h5>
-                        <ul class="footer__list">
-           
-        <li><a href="#career">Career</a></li>
-                            <li><a href="#founders">Founders</a></li>
-                            <li><a href="#culture">Culture</a></li>
-                            <li><a href="#onboarding">Onboarding</a></li>
-                        </ul>
-                    </div>
+                     <div class="row"> 
+                         <div class="footer__col">
+                               <h5 class="footer__col-title">TEAM</h5>
+                            <ul class="footer-links-list">
+                                <li><a href="#career">Career</a></li>
+                                <li><a href="#founders">Founders</a></li>
+                                <li><a href="#culture">Culture</a></li>
+                                <li><a href="#onboarding">Onboarding</a></li>
+                            </ul>
+                         </div>
+                     </div>
+                    
+                      <!-- Column 5: Legal -->
+                     <div class="row"> 
+                         <div class="footer__col">
+                               <h5 class="footer__col-title">LEGAL</h5>
+                            <ul class="footer-links-list">
+                                <li><a href="#gdpr">GDPR</a></li>
+                                <li><a href="#privacy">Privacy Policy</a></li>
+                                <li><a href="#terms">Terms of Service</a></li>
+                                <li><a href="#disclaimer">Disclaimer</a></li>
+                            </ul>
+                         </div>
+                     </div>
 
-                    <!-- Column 5: Legal -->
-                    <div class="footer__col">
-                        <h5 class="footer__col-title">LEGAL</h5>
-                        <ul class="footer__list">
-                            <li><a href="#gdpr">GDPR</a></li>
-                            <li><a href="#privacy">Privacy Policy</a></li>
-                            <li><a href="#terms">Terms of Service</a></li>
-                            <li><a href="#disclaimer">Disclaimer</a></li>
-                        </ul>
-                    </div>
-        
-        </div>
-
-                <!-- Bottom Branding and Socials Bar -->
-                <div class="footer__bottom-bar">
-                    <div class="footer__logo">
-                        <img src="./assets/logo.svg" alt="Treact Logo" class="footer__logo-img">
-                        <span class="footer__logo-text">Treact Inc.</span>
-                    </div>
-                    <p class="footer__copyright">
-                        &copy; 2018 Treact Inc. All Rights Reserved.
-                    </p>
-                    <div class="footer__socials">
-                        <a href="https://facebook.com" class="social__icon-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com" class="social__icon-link"><i class="fab fa-twitter"></i></a>
-                        <a href="https://youtube.com" class="social__icon-link"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                        </div>
-    </footer>
-  </body>
-</html>
+                <!--Bottom branding bar (logo, copyright, social icons) -->
+                     <div class="row__narrow">                     
+                         <div class="footer__bottom-bar"> 
+                                <img src="./assets/logo.svg" alt="Treact Logo" class="footer__logo-img">
+                                <span class="footer__logo-text">Treact Inc.</span>
+                                <p class="footer__copyright">&copy; 2018 Treact Inc. All Rights Reserved.</p>
+                            <div class="social-icons">
+                                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" ><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" ><i class="fab fa-twitter"></i></a>
+                                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" ><i class="fab fa-youtube"></i></a>
+                            </div>
+                         </div>
+                     </div>    
+                </footer>                                           
+            </body>
+        </html>

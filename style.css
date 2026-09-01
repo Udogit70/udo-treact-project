@@ -96,6 +96,58 @@ nav {
   color: #6415ff;
 }
 
+/* ==========================================
+   NAV LINK UNDERLINE MICRO-INTERACTION
+   ========================================== */
+
+/* 1. Base Navigation Link Container */
+.nav__link {
+  color: #24262d;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 16px;
+  display: inline-block;
+  position: relative; /* Essential: anchors the absolute underline */
+  padding-bottom: 6px; /* Spacing between text and underline */
+  transition: color 0.3s ease;
+}
+
+/* 2. Hidden Underline (Pseudo-Element) */
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(100, 21, 255); /* Treact theme purple */
+
+  /* Initially invisible & shrunk */
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center; /* Expands smoothly from center outwards */
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* 3. Hover Interaction */
+.nav__link:hover {
+  color: rgb(100, 21, 255);
+}
+
+.nav__link:hover::after {
+  opacity: 1;
+  transform: scaleX(1); /* Expands to full 100% width */
+}
+
+/* 4. Safeguard: Prevent underline on the Sign Up button */
+.nav__button--signup::after {
+  display: none !important;
+}
+
 .nav__link.modal__link--primary,
 .nav__links .modal__link--primary {
   display: inline-flex;
@@ -108,6 +160,54 @@ nav {
   text-decoration: none;
   font-weight: 700;
   box-shadow: 0 8px 20px rgba(100, 21, 255, 0.2);
+}
+
+/* ==========================================
+   SIGN UP BUTTON GLOW & TACTILE HOVER
+   ========================================== */
+
+/* 1. Base Button Structure */
+.modal__link--primary {
+  background-color: rgb(100, 21, 255);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 32px;
+  border-radius: 50px; /* Circular pill shape */
+  display: inline-block;
+  margin-left: 20px;
+
+  /* Subtle initial elevation */
+  box-shadow: 0 4px 6px rgba(100, 21, 255, 0.15);
+
+  /* Smooth multi-property transition */
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* 2. Hover State: Purple Ambient Glow + Subtle Scale Up */
+.modal__link--primary:hover {
+  background-color: rgb(80, 11, 230); /* Slightly deeper purple for contrast */
+  transform: translateY(-3px) scale(1.03); /* Lifts up and grows 3% */
+
+  /* Layered ambient purple glow */
+  box-shadow:
+    0 10px 20px rgba(100, 21, 255, 0.35),
+    0 0 0 4px rgba(100, 21, 255, 0.15);
+}
+
+/* 3. Active / Click State: Tactile Feedback */
+.modal__link--primary:active {
+  transform: translateY(-1px) scale(0.98); /* Depresses slightly on click */
+  box-shadow: 0 5px 10px rgba(100, 21, 255, 0.25);
+}
+
+/* 4. Safeguard: Prevent the expanding line effect on this specific button */
+.modal__link--primary::after {
+  display: none !important;
 }
 
 .btn__menu {

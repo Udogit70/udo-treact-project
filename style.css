@@ -45,7 +45,9 @@ main {
 NAVBAR ↓
 
 */
-nav {
+
+/* Ensure the parent nav is a flex container */
+.nav {
   width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
   padding-top: 32px;
@@ -68,11 +70,21 @@ nav {
 }
 
 .nav__logo {
-  display: block;
-  width: 72px;
-  height: auto;
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
   margin: 8px 0;
   padding-bottom: 4px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Image: forces the actual graphic to fit 42px x 42px */
+.nav__logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain; /* Keeps aspect ratio intact */
+  display: block;
 }
 
 .nav__links {
@@ -236,8 +248,18 @@ nav {
   z-index: 4;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(300%);
-  transition: all 300ms ease;
+  transform: translateY(-20px); /* Positioned slightly higher up by default */
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 300ms ease;
+}
+
+/* Add this missing selector block to handle the toggle link */
+body.menu--open .modal {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .modal__links {
@@ -445,7 +467,194 @@ PRICING ↓
   align-items: center;
 }
 
-/* 
+.pricing-section {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+/* --- Header Section (Perfectly Centered at Top) --- */
+.pricing-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 60px auto; /* Centered block with space beneath it */
+}
+
+.section-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #4f46e5; /* Distinct purple tag */
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.section-title span {
+  color: #4f46e5; /* Purple highlight on "Plans." */
+}
+
+.section-subtitle {
+  font-size: 15px;
+
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* --- Grid Layout Container --- */
+.plans-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Stacks 1 column on mobile */
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* --- Base Card Styles --- */
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease;
+}
+
+/* Header & Divider Accents inside Cards */
+.plan-header {
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.plan-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #64748b;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.plan-period {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #94a3b8;
+}
+
+/* Body and Typography lists inside Cards */
+.plan-body {
+  padding: 30px 20px;
+  text-align: center;
+  flex-grow: 1; /* Pushes buttons seamlessly to baseline */
+}
+
+.plan-target {
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.plan-features {
+  list-style: none;
+}
+
+.plan-features li {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.plan-footer {
+  padding: 0 30px 40px 30px;
+  text-align: center;
+}
+
+/* --- CTA Buttons Styling --- */
+.btn {
+  width: 100%;
+  max-width: 180px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Color Accent Variations matching image colors */
+.plan--personal {
+  border-top: 4px solid #4fd1c5;
+}
+.btn--teal {
+  background-color: #4fd1c5;
+  color: white;
+}
+
+.plan--enterprise {
+  border-top: 4px solid #fc8181;
+}
+.btn--coral {
+  background-color: #fc8181;
+  color: white;
+}
+
+/* --- Desktop View: Structural Asymmetry Engine --- */
+@media (min-width: 768px) {
+  .plans-container {
+    grid-template-columns: repeat(3, minmax(260px, 340px));
+    gap: 0px; /* Zero gaps match templates that rely purely on card overlap */
+    align-items: center; /* Ensures normal cards remain aligned to middle card */
+  }
+
+  /* Style Override for Business Card (Middle) */
+  .plan--business {
+    background-color: #4f46e5; /* Dominant branding solid background */
+    border: none;
+    transform: scaleY(1.08); /* Artificially stretches top and bottom anchors */
+
+    z-index: 2;
+    box-shadow: 0 20px 30px rgba(79, 70, 229, 0.15);
+  }
+
+  /* Target inner typography variables specifically inside the business card */
+  .plan--business .plan-name,
+  .plan--business .plan-price,
+  .plan--business .plan-period,
+  .plan--business .plan-target,
+  .plan--business .plan-features li {
+    color: #ffffff;
+  }
+
+  .plan--business .plan-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .btn--white {
+    background-color: #ffffff;
+    color: #4f46e5;
+  }
+}
+/*
 
 TESTIMONIALS ↓
 
@@ -473,7 +682,6 @@ FOOTER ↓
 */
 
 footer {
-  padding: 96px 32px;
   background-color: rgb(100, 21, 255);
   margin-bottom: -32px;
   position: relative;
@@ -688,5 +896,38 @@ footer {
     main {
       margin-bottom: 80px;
     }
+  }
+}
+/* --- Desktop View: Structural Asymmetry Engine --- */
+@media (min-width: 768px) {
+  .plans-container {
+    grid-template-columns: repeat(3, minmax(260px, 340px));
+    gap: 0px; /* Zero gaps match templates that rely purely on card overlap */
+    align-items: center; /* Ensures normal cards remain aligned to middle card */
+  }
+
+  /* Style Override for Business Card (Middle) */
+  .plan--business {
+    background-color: #4f46e5; /* Dominant branding solid background */
+    border: none;
+    transform: scaleY(1.08); /* Artificially stretches top and bottom anchors */
+    z-index: 2;
+    box-shadow: 0 20px 30px rgba(79, 70, 229, 0.15);
+  } /* Target inner typography variables specifically inside the business card */
+  .plan--business .plan-name,
+  .plan--business .plan-price,
+  .plan--business .plan-period,
+  .plan--business .plan-target,
+  .plan--business .plan-features li {
+    color: #ffffff;
+  }
+
+  .plan--business .plan-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .btn--white {
+    background-color: #ffffff;
+    color: #4f46e5;
   }
 }

@@ -11,11 +11,12 @@
 </head>
 
 <body>
-    <section id="landing">
-         <nav>     
-            <div class="logo-box">
-               <img src="assets/logo.2c489fc453a1783cbadacf914efa3df6.svg" alt="Treact" class="nav-logo">  
-            </div>
+    <section id="landing">     
+       <nav class="nav">    
+              <div class="logo-box nav__logo">
+                <img class="nav__logo-img" src="assets/logo.2c489fc453a1783cbadacf914efa3df6.svg" alt="Treact Logo">
+                <span class="nav__logo-text">T-React</span>
+              </div>
             
             <div class="nav__links">
                 <a href="#about" class="nav__link">About</a>
@@ -319,84 +320,88 @@
           </div>
             <div class="container">
                 <div class="row">
-        <!-- 1.Enter the Pricing Centered Header Container here  -->
-        <div class="pricing__header">
-                <span class="purple">PRICING</span>
-                <h2 class="section__title">Reasonable & Flexible <span class="purple">Plans.</span></h2>
-                <p class="section__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+       
+                  <!--Pricing Section  -->
+                <section class="pricing-section">
+                <!-- Centered Pricing Header Content -->
+                     <div class="pricing__header">
+                         <span class="purple">PRICING</span>
+                         <h2 class="section__title">Reasonable & Flexible <span class="purple">Plans.</span></h2>
+                         <p class="section__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                     </div>
 
-            <!-- 2. The 3-Column Pricing Grid Wrapper -->
-            <div class="pricing__cards">
-
-                <!-- Card 1: Personal -->
-                <div class="pricing__card pricing__card--personal">
-                    <div class="pricing__card-top pricing__card-top--cyan">
-                        <span class="plan__name">PERSONAL</span>
-                        <span class="plan__price">$17.99</span>
-                        <span class="plan__duration">MONTHLY</span>
-                    </div>
-                    <div class="pricing__card-body">
-                        <p class="feature__heading">For Individuals</p>
-                        <ul class="feature__list">
-                            <li>30 Templates</li>  
-                            <li>7 Landing Pages</li>
-                            <li>12 Internal Pages</li>
-                            <li>Basic Assistance</li>
-                        </ul>
-                    </div>
-                    <div class="pricing__card-bottom">
-                        <button class="pricing__btn pricing__btn--cyan">BUY NOW</button>
-                    </div>
-                </div>
-
-                <!-- Card 2: Business (FEATURED / HIGH-CONTRAST PURPLE) -->
-                <div class="pricing__card pricing__card--featured">
-                    <div class="pricing__card-top pricing__card-top--featured">
-                        <span class="plan__name">BUSINESS</span>
-                        <span class="plan__price">$37.99</span>
-                        <span class="plan__duration">MONTHLY</span>
-                    </div>
-                <div class="pricing__card-body">
-                        <p class="feature__heading">For Small Businesses</p>
-                        <ul class="feature__list">
-                            <li>60 Templates</li>
-                            <li>15 Landing Pages</li>
-                            <li>22 Internal Pages</li>
-                            <li>Priority Assistance</li>
-                        </ul>
-                    </div>
-                    <div class="pricing__card-bottom">
-                        <button class="pricing__btn pricing__btn--white">BUY NOW</button>
-                    </div>
-                </div>
-
-                <!-- Card 3: Enterprise -->
-                <div class="pricing__card pricing__card--enterprise">
-                    <div class="pricing__card-top pricing__card-top--pink">
-                        <span class="plan__name">ENTERPRISE</span>
-                        <span class="plan__price">$57.99</span>
-                        <span class="plan__duration">MONTHLY</span>
-                </div>
-                    <div class="pricing__card-body">
-                         <p class="feature__heading">For Large Companies</p>
-                        <ul class="feature__list">
-                            <li>90 Templates</li>
-                            <li>27 Landing Pages</li>
-                            <li>37 Internal Pages</li>
-                            <li>Personal Assistance</li>
-                        </ul>
-                    </div>
-                    <div class="pricing__card-bottom">
-                        <button class="pricing__btn pricing__btn--pink">BUY NOW</button>
-                    </div>
-                </div>
-            </div>
-           </div>
-          </section>
+            <!-- The 3-Column Pricing Grid Container -->
+            
+             <div class="plans-container">
         
-    <!-- Testimonials Section --> 
-        <section id="testimonials">
+        <!-- Card 1: Personal -->
+        <div class="plan plan--personal">
+            <div class="plan-header">
+                <span class="plan-name">PERSONAL</span>
+                <div class="plan-price">$17.99</div>
+                <span class="plan-period">MONTHLY</span>
+            </div>
+            <div class="plan-body">
+                <p class="plan-target">For Individuals</p>
+                <ul class="plan-features">
+                    <li>30 Templates</li>
+                    <li>7 Landing Pages</li>
+                    <li>12 Internal Pages</li>
+                    <li>Basic Assistance</li>   
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <button class="btn btn--teal">BUY NOW</button>
+            </div>
+        </div>
+
+        <!-- Card 2: Business (Featured & Taller) -->
+        <div class="plan plan--business">
+            <div class="plan-header">
+                <span class="plan-name">BUSINESS</span>
+                <div class="plan-price">$37.99</div>
+                <span class="plan-period">MONTHLY</span>
+            </div>
+            <div class="plan-body">
+                <p class="plan-target">For Small Businesses</p>
+                <ul class="plan-features">
+                    <li>60 Templates</li>
+                    <li>15 Landing Pages</li>
+                    <li>22 Internal Pages</li>
+                    <li>Priority Assistance</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <button class="btn btn--white">BUY NOW</button>
+            </div>
+        </div>
+
+        <!-- Card 3: Enterprise -->
+        <div class="plan plan--enterprise">
+            <div class="plan-header">
+                <span class="plan-name">ENTERPRISE</span>
+                <div class="plan-price">$57.99</div>
+                <span class="plan-period">MONTHLY</span>
+            </div>
+            <div class="plan-body">
+                <p class="plan-target">For Large Companies</p>
+                <ul class="plan-features">
+                    <li>90 Templates</li>
+                    <li>27 Landing Pages</li>
+                    <li>37 Internal Pages</li>
+                    <li>Personal Assistance</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <button class="btn btn--coral">BUY NOW</button>
+            </div>
+        </div>
+
+    </div>          
+  </section>                  
+
+  <!-- Testimonials Section --> 
+    ss<section id="testimonials">
             <div class="container">
                 <div class="row">
     <!--Testimonials Centered Header Container-->
@@ -468,12 +473,6 @@
        <section id="footer" class="footer-section">  
          <footer class="container">
             <div class="row">
-              <div class="footer__top">
-                <h2 class="footer__title">Get Started with Treact Today.</h2>
-                <p class="footer__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#signup" class="footer__btn">Sign Up</a>
-              </div>
-
               <div class="footer-links-container">
                 <div class="footer__col">
                   <h5 class="footer__col-title">MAIN</h5>

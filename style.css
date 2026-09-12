@@ -13,6 +13,8 @@ body {
 }
 
 .row {
+  display: flex;
+  align-items: center;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -40,13 +42,7 @@ main {
   margin-bottom: 96px;
 }
 
-/* 
-
-NAVBAR ↓
-
-*/
-
-/* Ensure the parent nav is a flex container */
+/* NAVBAR ↓ Ensure the parent nav is a flex container */
 .nav {
   width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
@@ -108,11 +104,8 @@ NAVBAR ↓
   color: #6415ff;
 }
 
-/* ==========================================
-   NAV LINK UNDERLINE MICRO-INTERACTION
-   ========================================== */
-
-/* 1. Base Navigation Link Container */
+/* NAV LINK UNDERLINE MICRO-INTERACTION */
+/* Base Navigation Link Container */
 .nav__link {
   color: #24262d;
   text-decoration: none;
@@ -173,12 +166,8 @@ NAVBAR ↓
   font-weight: 700;
   box-shadow: 0 8px 20px rgba(100, 21, 255, 0.2);
 }
-
-/* ==========================================
-   SIGN UP BUTTON GLOW & TACTILE HOVER
-   ========================================== */
-
-/* 1. Base Button Structure */
+/* SIGN UP BUTTON GLOW & TACTILE HOVER */
+/*  Base Button Structure */
 .modal__link--primary {
   background-color: rgb(100, 21, 255);
   color: #ffffff;
@@ -299,24 +288,130 @@ body.menu--open .modal {
   top: 24px;
   right: 18px;
 }
-
-/* 
-
-HEADER / ABOUT US ↓
-
-*/
-
+/* HEADER / Hero Section ↓ */
 header .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* 
+/* --- 1. The Main Hero Layout Container --- */
+.hero-container {
+  display: flex;
+  flex-direction: row; /* Places left and right sections side-by-side */
+  align-items: center; /* Centers them vertically against each other */
+  justify-content: space-between; /* Pushes the left text block and right image apart cleanly */
+  gap: 40px; /* Sets a clean safety gap so they never collide */
+  width: 100%;
+  max-width: 1200px; /* Keeps the layout looking crisp on large monitors */
+  margin: 0 auto; /* Centers the entire hero section on the screen */
+  padding: 60px 20px;
+}
 
-FEATURES ↓
+/* --- 2. The Left Column Block (The exact purple box specifications) --- */
+.hero__left-col {
+  width: 40%; /* Forces the left block to span exactly 40% */
+  min-width: 350px; /* Prevents the column from becoming too narrow on medium screens */
+  display: flex;
+  flex-direction: column; /* Stacks text, form, and trusted rows vertically inside it */
+  gap: 40px; /* Handles vertical breathing room between the stacked content */
+  flex-shrink: 0; /* Crucial: prevents the right graphic from squishing this text block */
+}
 
-*/
+/* Forces this specific text fragment onto its own new line */
+.hero__break-text {
+  display: block;
+  color: #6415ff; /*The Treact purple theme color */
+}
+
+/* The Parent Form Box Container */
+.hero__form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 450px; /* Restricts the input from stretching too wide */
+  margin-top: 20px;
+  position: relative; /* Good if you plan to absolute-position the button inside the input */
+}
+
+/* The Base Input Field */
+.hero__form input {
+  width: 100%;
+  padding: 16px 160px 16px 24px; /* Generous 160px right padding keeps text from typing under the button */
+  font-size: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 50px; /* Gives the input field pill-shaped corners */
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.hero__form input:focus {
+  border-color: #6415ff; /* Highlights purple when active */
+}
+
+/* The Absolute Positioned Button */
+.hero__form button {
+  position: absolute;
+  right: 6px; /* Inserts the button slightly from the far right border */
+  top: 6px;
+  bottom: 6px; /* Constrains button height to match the input interior */
+  padding: 0 28px;
+  background-color: #6415ff; /* Purple background */
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px; /* Pill-shaped corners to match the input */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.hero__form button:hover {
+  background-color: #5011cc; /* Deepens color on hover */
+}
+
+/* --- 4. Trusted Customers Layout (Inner Flex Rule) --- */
+.hero__trusted {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.trusted__title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #a0aec0;
+  letter-spacing: 1px;
+}
+
+/* Handles the logo images horizontally */
+.trusted__logos {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* Clean horizontal spacing between trusted logos */
+}
+
+.trusted__logos img {
+  height: 24px; /* Locks logo height so they scale uniformly */
+  object-fit: contain;
+  opacity: 0.5; /* Softens logos to match the screenshot design style */
+}
+/* --The Right-side Sub-section Wrapper --- */
+.header__content-right,
+.hero__right-col {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end; /* Aligns the image neatly to the far right edge */
+  align-items: center;
+}
+/* The Illustration Graphic */
+.header__content-right .hero__img,
+.hero__right-col img {
+  width: 100%;
+  max-width: 460px; /* Keeps the hero graphic between its original size and the smaller feature illustration */
+  height: auto; /* Maintains standard design aspect ratio */
+  object-fit: contain;
+}
+/* FEATURES ↓ */
 #features {
   position: relative;
 }
@@ -325,6 +420,87 @@ FEATURES ↓
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.features__header {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.features__title {
+  margin: 16px 0;
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+.features__subtitle {
+  color: #5f6f8a;
+  line-height: 1.7;
+}
+
+.features__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+}
+
+.features__content {
+  min-width: 0;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 28px;
+}
+
+.feature__icon-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature__icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+}
+
+.feature__text {
+  min-width: 0;
+}
+
+.feature__title {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.feature__para {
+  color: #5f6f8a;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.features__content-right,
+.quality__content-right,
+.steps__content-left,
+.values__content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.features__img,
+.quality__img,
+.steps__img,
+.values__img {
+  display: block;
+  width: min(100%, 520px);
+  height: auto;
 }
 
 /* 
@@ -337,6 +513,14 @@ QUALITY WORK ↓
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 80px;
+}
+
+.quality__content-left,
+.steps__content-right,
+.values__content-left {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 /* 
@@ -349,6 +533,7 @@ STEPS ↓
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 80px;
 }
 
 /* 
@@ -444,17 +629,6 @@ VALUES ↓
   line-height: 1.7;
 }
 
-.values__content-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.values__img {
-  display: block;
-  width: min(100%, 520px);
-  height: auto;
-}
 /*
 
 PRICING ↓
@@ -474,10 +648,28 @@ PRICING ↓
 }
 
 /* --- Header Section (Perfectly Centered at Top) --- */
-.pricing-header {
+.pricing__header {
   text-align: center;
   max-width: 650px;
-  margin: 0 auto 60px auto; /* Centered block with space beneath it */
+  margin: 0 auto 60px;
+}
+
+.pricing__header .purple {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.pricing__header .section__title {
+  margin-bottom: 16px;
+}
+
+.pricing__header .section__para {
+  margin: 0 auto;
+  color: #64748b;
+  line-height: 1.6;
 }
 
 .section-tag {
@@ -618,42 +810,6 @@ PRICING ↓
   color: white;
 }
 
-/* --- Desktop View: Structural Asymmetry Engine --- */
-@media (min-width: 768px) {
-  .plans-container {
-    grid-template-columns: repeat(3, minmax(260px, 340px));
-    gap: 0px; /* Zero gaps match templates that rely purely on card overlap */
-    align-items: center; /* Ensures normal cards remain aligned to middle card */
-  }
-
-  /* Style Override for Business Card (Middle) */
-  .plan--business {
-    background-color: #4f46e5; /* Dominant branding solid background */
-    border: none;
-    transform: scaleY(1.08); /* Artificially stretches top and bottom anchors */
-
-    z-index: 2;
-    box-shadow: 0 20px 30px rgba(79, 70, 229, 0.15);
-  }
-
-  /* Target inner typography variables specifically inside the business card */
-  .plan--business .plan-name,
-  .plan--business .plan-price,
-  .plan--business .plan-period,
-  .plan--business .plan-target,
-  .plan--business .plan-features li {
-    color: #ffffff;
-  }
-
-  .plan--business .plan-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  .btn--white {
-    background-color: #ffffff;
-    color: #4f46e5;
-  }
-}
 /*
 
 TESTIMONIALS ↓
@@ -662,6 +818,73 @@ TESTIMONIALS ↓
 
 #testimonials .row {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 56px;
+}
+
+#testimonials {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+.testimonials__header {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonials__content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 72px;
+  width: 100%;
+}
+
+.testimonials__content-left,
+.testimonials__content-right {
+  min-width: 0;
+}
+
+.testimonials__content-left {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonials__img {
+  display: block;
+  width: min(100%, 430px);
+  height: auto;
+}
+
+.testimonials__content-right {
+  width: 100%;
+  max-width: 600px;
+}
+
+.review__quote {
+  color: #5f6f8a;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.reviewer__profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.reviewer__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewer__info {
+  min-width: 0;
 }
 
 /* 
@@ -680,12 +903,25 @@ START / CALL TO ACTION ↓
 FOOTER ↓
 
 */
-
+/* The Main Footer Container */
 footer {
   background-color: rgb(100, 21, 255);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column; /* Explicitly stack the links on top and branding on the bottom */
+  gap: 50px; /* Clean vertical breathing room between top and bottom sections */
+  width: 100%;
+  box-sizing: border-box;
   margin-bottom: -32px;
   position: relative;
   overflow: hidden;
+}
+
+footer > .row {
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 1120px;
+  gap: 0;
 }
 
 .footer-section .container {
@@ -701,8 +937,6 @@ footer {
   margin-bottom: 52px;
 }
 
-.footer__title,
-.footer__subtitle,
 .footer__col-title,
 .footer-links-list li a,
 .footer__logo-text,
@@ -711,38 +945,89 @@ footer {
   color: #fff;
 }
 
-.footer__title {
-  font-size: clamp(2rem, 3vw, 3rem);
-  letter-spacing: -0.04em;
-}
-
-.footer__subtitle {
-  max-width: 620px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
-}
-
-.footer__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 28px;
-  border-radius: 999px;
-  background: #fff;
-  color: #6415ff;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
-}
-
-.footer-links-container {
+/* Top Section: The Links Columns Grid */
+.footer__links-container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(
+    5,
+    minmax(120px, 1fr)
+  ); /* Clean 5-column grid layout */
+  gap: 30px;
   width: 100%;
   margin-bottom: 48px;
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
+  flex-grow: 1;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Individual Link Blocks (e.g., MAIN, PRODUCT) */
+.footer__link-column {
+  display: flex;
+  flex-direction: column; /* Stacks individual links vertically under headers */
+  gap: 12px;
+}
+.footer__link-column h5 {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+}
+
+.footer__link-column a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer__link-column a:hover {
+  color: #ffffff;
+}
+
+/* Bottom Section: The Copyright & Socials Bar */
+.footer__bottom-bar {
+  display: flex;
+  flex-direction: row; /* Keeps items horizontally aligned */
+  justify-content: space-between; /* Spreads brand logo, copyright text, and socials out evenly */
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Sleek separator line */
+  padding-top: 30px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Left Brand Box */
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Middle Copyright Text */
+.footer__copyright {
+  color: #cbd5e0;
+  font-size: 14px;
+}
+/* Right Social Media Icons Wrap */
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  color: #6415ff;
+  border-radius: 50px;
+  text-decoration: none;
 }
 
 .footer__col {
@@ -763,6 +1048,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex-grow: 1;
 }
 
 .footer-links-list li a {
@@ -786,6 +1072,13 @@ footer {
   align-items: center;
   gap: 12px;
   min-width: 180px;
+}
+
+.footer__brand .nav__logo {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .footer__logo-img {
@@ -846,7 +1139,7 @@ footer {
       flex-direction: column;
       align-items: center;
     }
-    .footer-links-container {
+    .footer__links-container {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     footer {
@@ -890,7 +1183,7 @@ footer {
     .nav__links {
       display: none;
     }
-    .footer-links-container {
+    .footer__links-container {
       grid-template-columns: 1fr;
     }
     main {
@@ -902,18 +1195,19 @@ footer {
 @media (min-width: 768px) {
   .plans-container {
     grid-template-columns: repeat(3, minmax(260px, 340px));
-    gap: 0px; /* Zero gaps match templates that rely purely on card overlap */
-    align-items: center; /* Ensures normal cards remain aligned to middle card */
+    gap: 24px;
+    align-items: stretch;
   }
 
   /* Style Override for Business Card (Middle) */
   .plan--business {
     background-color: #4f46e5; /* Dominant branding solid background */
     border: none;
-    transform: scaleY(1.08); /* Artificially stretches top and bottom anchors */
     z-index: 2;
     box-shadow: 0 20px 30px rgba(79, 70, 229, 0.15);
-  } /* Target inner typography variables specifically inside the business card */
+  }
+
+  /* Target inner typography variables specifically inside the business card */
   .plan--business .plan-name,
   .plan--business .plan-price,
   .plan--business .plan-period,
@@ -929,5 +1223,62 @@ footer {
   .btn--white {
     background-color: #ffffff;
     color: #4f46e5;
+  }
+}
+
+@media (max-width: 1024px) {
+  .features__layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .features__content-right {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials__content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .testimonials__content-right {
+    max-width: none;
+  }
+
+  .testimonials__img {
+    width: min(100%, 320px);
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__left-col,
+  .header__content-right {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .header__content-right {
+    justify-content: center;
+  }
+
+  .header__content-right .hero__img {
+    max-width: 420px;
+  }
+
+  .features__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features__header {
+    margin-bottom: 36px;
+  }
+
+  .features__content-right {
+    order: 0;
   }
 }

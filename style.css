@@ -538,13 +538,60 @@ QUALITY WORK ↓
 */
 
 #quality .row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: 80px;
+  gap: 72px;
 }
 
-.quality__content-left,
+.quality__content-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.quality__content-left .section__title {
+  margin: 16px 0 24px;
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+.quality__content-left .section__title span,
+.quality__content-left .section__para span {
+  display: block;
+}
+
+.quality__content-left .section__para {
+  max-width: 500px;
+  color: #5f6f8a;
+  line-height: 1.7;
+}
+
+.purple__btn-large {
+  margin-top: 32px;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 8px;
+  background: #6415ff;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(100, 21, 255, 0.2);
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.purple__btn-large:hover {
+  background: #5011cc;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(100, 21, 255, 0.28);
+}
+
+.quality__content-right,
 .steps__content-right,
 .values__content-left {
   flex: 1 1 0;
@@ -1300,7 +1347,6 @@ footer > .row {
       align-items: center;
     }
     #values .row,
-    #quality .row,
     #steps .row {
       display: flex;
       flex-direction: column;

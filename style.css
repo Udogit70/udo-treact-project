@@ -605,10 +605,59 @@ STEPS ↓
 */
 
 #steps .row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   gap: 80px;
+}
+
+.steps__content-left {
+  width: 100%;
+}
+
+.steps__content-right {
+  min-width: 0;
+}
+
+.steps__content-right .section__title {
+  margin: 16px 0 40px;
+  line-height: 1.2;
+}
+
+.timeline__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+}
+
+.timeline__number {
+  color: #6415ff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.timeline__text {
+  min-width: 0;
+}
+
+.timeline__title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.timeline__para {
+  margin-top: 8px;
+  color: #5f6f8a;
+  line-height: 1.6;
 }
 
 /* 
@@ -1346,8 +1395,7 @@ footer > .row {
       flex-direction: column;
       align-items: center;
     }
-    #values .row,
-    #steps .row {
+    #values .row {
       display: flex;
       flex-direction: column;
       align-items: center;

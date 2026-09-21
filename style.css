@@ -684,6 +684,10 @@ VALUES ↓
   line-height: 1.2;
 }
 
+#values .section__title > span {
+  display: block;
+}
+
 .values__title-break {
   display: block;
   margin-top: 10px;
@@ -700,19 +704,15 @@ VALUES ↓
 }
 
 .values__info-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   margin-top: 28px;
   width: 100%;
 }
 
 .values__item {
-  display: grid;
-  grid-template-columns: minmax(150px, 0.7fr) minmax(0, 1.3fr);
-  align-items: start;
-  gap: 20px;
-  width: 100%;
+  min-width: 0;
 }
 
 .value__title {
@@ -733,13 +733,29 @@ VALUES ↓
   background: #f3f0ff;
 }
 
+.value__img--affordable {
+  background: #dff7e8;
+}
+
+.value__img--affordable .value__img {
+  stroke: #198754;
+}
+
+.values__item:nth-child(2) .value__img--wrapper {
+  background: #fde2ed;
+}
+
+.values__item:nth-child(2) .value__img {
+  stroke: #d63384;
+}
+
 .value__name {
   font-size: 1.05rem;
   font-weight: 700;
 }
 
 .value__para {
-  margin: 2px 0 0;
+  margin: 12px 0 0;
   color: #5f6f8a;
   font-size: 0.9rem;
   line-height: 1.6;
@@ -1392,11 +1408,6 @@ footer > .row {
       display: block;
     }
     header .row {
-      flex-direction: column;
-      align-items: center;
-    }
-    #values .row {
-      display: flex;
       flex-direction: column;
       align-items: center;
     }

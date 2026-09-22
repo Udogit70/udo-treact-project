@@ -1024,7 +1024,6 @@ TESTIMONIALS ↓
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 56px;
 }
 
 #testimonials {
@@ -1065,18 +1064,90 @@ TESTIMONIALS ↓
 .testimonials__content-right {
   width: 100%;
   max-width: 600px;
+  justify-self: end;
+}
+
+.testimonials__content-right .testimonials__header {
+  margin: 0;
+  text-align: left;
+}
+
+.testimonials__content-right .section__title {
+  margin: 16px 0;
+  line-height: 1.2;
+}
+
+.testimonials__content-right .section__para {
+  line-height: 1.7;
+}
+
+.testimonial {
+  margin-top: 40px;
+}
+
+.review__heading {
+  margin-top: 20px;
+  font-size: 1.25rem;
 }
 
 .review__quote {
+  margin-top: 12px;
   color: #5f6f8a;
   line-height: 1.7;
-  overflow-wrap: anywhere;
+}
+
+.testimonial__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.testimonial__star::before {
+  content: "\2605";
+  color: #f6ad55;
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.testimonial__buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.testimonial__button svg {
+  width: 16px;
+  height: 16px;
+}
+.testimonial__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: #edf2f7;
+  border-radius: 50%;
+  margin: 0;
+  transition: all 300ms ease;
+}
+
+.testimonial__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 32px;
+}
+.testimonial__button:hover {
+  background-color: rgb(229, 231, 235);
+  /* BUG FIX: this closing brace was missing, which swallowed all later CSS. */
 }
 
 .reviewer__profile {
   display: flex;
   align-items: center;
   gap: 16px;
+  /* BUG FIX: removed stray text appended to this declaration. */
   margin-top: 28px;
 }
 
@@ -1140,9 +1211,10 @@ START / CALL TO ACTION ↓
   font-size: 0.875rem;
   font-weight: 700;
   text-decoration: none;
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
+  transition: transform 200ms ease;
+  /* BUG FIX: this was missing the colon after `box-shadow`.
+     `transition` controls animation; the shadow itself is defined below. */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .cta__btn:hover {
@@ -1226,13 +1298,14 @@ footer > .row {
 
 /* Top Section: The Links Columns Grid */
 .footer__links-container {
+  /* Keep all five footer groups in one horizontal row. */
   display: grid;
-  grid-template-columns: repeat(
-    5,
-    minmax(120px, 1fr)
-  ); /* Clean 5-column grid layout */
-  gap: 30px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 40px);
   width: 100%;
+  max-width: 1120px;
+  align-items: start;
+  justify-content: center;
   margin-bottom: 48px;
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -1402,69 +1475,64 @@ footer > .row {
   header .row {
     align-items: flex-end;
   }
+}
 
-  @media (max-width: 1024px) {
-    .btn__menu {
-      display: block;
-    }
-    header .row {
-      flex-direction: column;
-      align-items: center;
-    }
-    .footer__links-container {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    footer {
-      padding: 80px 32px;
-    }
+@media (max-width: 1024px) {
+  .btn__menu {
+    display: block;
   }
-
-  @media (max-width: 768px) {
-    #quality .row,
-    #values .row {
-      flex-direction: column-reverse;
-    }
-    #steps .row,
-    #testimonials .row {
-      flex-direction: column;
-      align-items: center;
-    }
-    #pricing .row {
-      margin-top: 40px;
-    }
-    .footer__bottom-bar {
-      flex-direction: column;
-      text-align: center;
-    }
-    .footer__copyright {
-      text-align: center;
-    }
-    .social-icons {
-      justify-content: center;
-    }
+  header .row {
+    flex-direction: column;
+    align-items: center;
   }
+  footer {
+    padding: 80px 32px;
+  }
+}
 
-  @media (max-width: 640px) {
-    .container {
-      padding: 80px 0;
-    }
-    #values .values__item {
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-    .nav__logo {
-      margin: 8px 0;
-      padding-bottom: 4px;
-    }
-    .nav__links {
-      display: none;
-    }
-    .footer__links-container {
-      grid-template-columns: 1fr;
-    }
-    main {
-      margin-bottom: 80px;
-    }
+@media (max-width: 768px) {
+  #quality .row,
+  #values .row {
+    flex-direction: column-reverse;
+  }
+  #steps .row,
+  #testimonials .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  #pricing .row {
+    margin-top: 40px;
+  }
+  .footer__bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer__copyright {
+    text-align: center;
+  }
+  /* BUG FIX: the HTML uses `.footer__socials`, not `.social-icons`. */
+  .footer__socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 80px 0;
+  }
+  #values .values__item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .nav__logo {
+    margin: 8px 0;
+    padding-bottom: 4px;
+  }
+  .nav__links {
+    display: none;
+  }
+  main {
+    margin-bottom: 80px;
   }
 }
 /* --- Desktop View: Structural Asymmetry Engine --- */

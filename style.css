@@ -259,6 +259,10 @@ body.menu--open .modal {
   align-items: center;
 }
 
+.modal__form {
+  display: none;
+}
+
 .modal__link {
   color: #1a202c;
   font-size: 18px;
@@ -1292,7 +1296,7 @@ footer > .row {
 .footer-links-list li a,
 .footer__logo-text,
 .footer__copyright,
-.social-icons a {
+.footer__socials a {
   color: #fff;
 }
 
@@ -1370,16 +1374,34 @@ footer > .row {
   gap: 16px;
 }
 
-.footer__social-icon {
+.footer__socials a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
-  background-color: #ffffff;
   color: #6415ff;
-  border-radius: 50px;
+  background-color: #ffffff;
+  border-radius: 50%;
   text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.footer__socials a:hover {
+  color: #ffffff;
+  background-color: #4f11cc;
+  transform: translateY(-2px);
+}
+
+.footer__socials a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
 }
 
 .footer__col {
@@ -1450,25 +1472,6 @@ footer > .row {
   opacity: 0.8;
 }
 
-.social-icons {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
-.social-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  text-decoration: none;
-  font-weight: 700;
-}
-
 /* Mobile Responsiveness */
 
 @media (max-width: 1280px) {
@@ -1520,16 +1523,151 @@ footer > .row {
   .container {
     padding: 80px 0;
   }
-  #values .values__item {
+  #values .values__info-list {
     grid-template-columns: 1fr;
-    gap: 10px;
   }
   .nav__logo {
+    width: auto;
+    height: auto;
     margin: 8px 0;
     padding-bottom: 4px;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .nav__logo-text {
+    white-space: nowrap;
+  }
+  #steps .row {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  #values .row {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
   .nav__links {
     display: none;
+  }
+  .nav {
+    position: relative;
+    z-index: 5;
+  }
+  .btn__menu--close {
+    display: none;
+    position: fixed;
+    top: 32px;
+    right: 24px;
+    z-index: 6;
+  }
+  body.menu--open .btn__menu:not(.btn__menu--close) {
+    display: none;
+  }
+  body.menu--open .btn__menu--close {
+    display: block;
+  }
+  .modal {
+    top: 88px;
+    height: auto;
+    max-height: calc(100vh - 104px);
+    margin: 0 16px;
+    padding: 24px;
+    overflow-y: auto;
+  }
+  .modal__links {
+    height: auto;
+    gap: 4px;
+  }
+  .modal__form {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .modal__form input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  .modal__form button {
+    width: 100%;
+    min-height: 48px;
+    border: 0;
+    border-radius: 8px;
+    background: #6415ff;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  body.menu--open .modal__form {
+    display: flex;
+  }
+  body.menu--open .hero__form {
+    visibility: hidden;
+  }
+  .hero__form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero__form input {
+    padding: 14px 16px;
+    border-radius: 8px;
+  }
+  .hero__form button {
+    position: static;
+    width: 100%;
+    min-height: 48px;
+    border-radius: 8px;
+  }
+  .feature__icon-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .timeline__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .testimonial__footer,
+  .reviewer__profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .testimonial__footer {
+    gap: 20px;
+  }
+  .reviewer__profile {
+    margin-top: 0;
+  }
+  .cta__buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .cta__btn {
+    width: 100%;
+  }
+  .footer__links-container {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 12px;
+    row-gap: 28px;
+  }
+  .footer__link-column {
+    grid-column: span 2;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .footer__link-column:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+  .footer__link-column:nth-child(5) {
+    grid-column: 4 / span 2;
   }
   main {
     margin-bottom: 80px;
